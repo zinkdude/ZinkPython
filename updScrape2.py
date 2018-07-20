@@ -49,11 +49,11 @@ def UpdateURL(url1):
 
 def doCSVExtract():
     #open webscrape output file and write it to another output file in CSV
-    file1= 'S:\\zink\\bpproj\\webscrape\\carmax\\carmaxoutput1.csv'
+    file1= 'carmaxoutput1.csv'
     with open(file1) as csvfile1:
         reader1 = csv.DictReader(csvfile1)
         fieldnames = ['id','Date/Time', 'Price1', 'Mileage1', 'Price2', 'Mileage2', 'Price3', 'Mileage3', 'Price4', 'Mileage4', 'Price5', 'Mileage5','ZIP','URL']
-        writer1 = csv.DictWriter( open('S:\\zink\\bpproj\\webscrape\\carmax\\AllDataOutput.csv', 'w', newline=''),fieldnames=fieldnames, dialect='excel')
+        writer1 = csv.DictWriter( open('AllDataOutput.csv', 'w', newline=''),fieldnames=fieldnames, dialect='excel')
         writer1.writeheader()
         for row in reader1:
             # print(row['URL'])
@@ -72,9 +72,9 @@ def doCSVExtract():
     
 
 def doXLSXFile() :
-    ## wkb1 = xlrd.open_workbook('S:\\zink\\bpproj\\webscrape\\carmax\\AllDataOutput.xlsx')
+    ## wkb1 = xlrd.open_workbook('AllDataOutput.xlsx')
     ## wks1 = wkb1.sheet_by_index(0)
-    xlsx_output_file = 'S:\\zink\\bpproj\\webscrape\\carmax\\AllDataOutput.xlsx'
+    xlsx_output_file = 'AllDataOutput.xlsx'
     wbk1 = load_workbook(filename = xlsx_output_file)
     wks1 = wbk1.get_sheet_by_name(name = 'Analysis1')
     wks1['A200']= ('zzz')
